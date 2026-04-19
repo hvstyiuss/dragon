@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Dragon Goddess FAST in Sailor Piece | Sea 2 Guide 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@400;600;700&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #f5c842;
+    --dragon-red: #c0392b;
+    --deep: #05070f;
+    --panel: rgba(10,14,30,0.85);
+    --border: rgba(245,200,66,0.25);
+    --text: #e8dfc0;
+    --muted: #8a8070;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--deep); color: var(--text); font-family: 'Rajdhani', sans-serif; font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+
+  /* ═══════════════ POPUP ═══════════════ */
+  .popup-overlay {
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.9);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 9999;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    opacity: 0; pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  .popup-overlay.active { opacity: 1; pointer-events: all; }
+
+  .popup {
+    background: linear-gradient(160deg, #0e1224 0%, #07090f 100%);
+    border: 1px solid rgba(245,200,66,0.35);
+    border-radius: 8px;
+    max-width: 490px; width: 100%;
+    position: relative; overflow: hidden;
+    transform: translateY(28px) scale(0.96);
+    transition: transform 0.42s cubic-bezier(0.34,1.56,0.64,1);
+    box-shadow: 0 40px 80px rgba(0,0,0,0.8), 0 0 70px rgba(192,57,43,0.18);
+  }
+  .popup-overlay.active .popup { transform: translateY(0) scale(1); }
+
+  .popup-top-bar { height: 3px; background: linear-gradient(90deg, var(--dragon-red), var(--gold), var(--dragon-red)); }
+
+  .popup-close {
+    position: absolute; top: 13px; right: 15px;
+    background: none; border: none; color: var(--muted);
+    font-size: 1.3rem; cursor: pointer; padding: 4px 8px;
+    transition: color 0.2s; line-height: 1; z-index: 2;
+  }
+  .popup-close:hover { color: var(--gold); }
+
+  .popup-body { padding: 38px 36px 32px; text-align: center; }
+
+  .popup-icon {
+    font-size: 3.4rem; display: block; margin-bottom: 14px;
+    animation: iconBob 2.2s ease-in-out infinite;
+  }
+  @keyframes iconBob {
+    0%,100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-6px) scale(1.1); }
+  }
+
+  .popup-eyebrow {
+    font-family: 'Orbitron', sans-serif; font-size: 10px;
+    letter-spacing: 4px; color: #ff6050; text-transform: uppercase;
+    margin-bottom: 10px; font-weight: 700;
+  }
+
+  .popup h2 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.25rem, 4vw, 1.8rem); font-weight: 900;
+    background: linear-gradient(135deg, #fff8e0, var(--gold), #ff8c6b);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 12px; line-height: 1.2;
+  }
+
+  .popup-desc { color: var(--muted); font-size: 0.93rem; line-height: 1.7; margin-bottom: 22px; }
+  .popup-desc strong { color: var(--text); }
+
+  .popup-perks { display: flex; flex-direction: column; gap: 9px; margin-bottom: 24px; text-align: left; }
+  .popup-perk {
+    display: flex; align-items: center; gap: 12px;
+    background: rgba(245,200,66,0.05); border: 1px solid rgba(245,200,66,0.12);
+    border-radius: 4px; padding: 9px 14px;
+    font-size: 0.88rem; color: var(--text); font-weight: 600;
+  }
+  .perk-icon { font-size: 1.1rem; flex-shrink: 0; }
+
+  .popup-timer {
+    font-family: 'Orbitron', sans-serif; font-size: 11px;
+    color: var(--muted); margin-bottom: 16px; letter-spacing: 1px;
+  }
+  .popup-timer span { color: var(--gold); font-weight: 700; }
+
+  /* 👇 The main CTA — links to your content locker */
+  .popup-btn {
+    display: block; width: 100%;
+    background: linear-gradient(135deg, #c0392b 0%, #8b0000 100%);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase;
+    padding: 18px 24px; border-radius: 4px;
+    text-decoration: none; border: 1px solid rgba(255,80,60,0.4);
+    transition: transform 0.2s;
+    margin-bottom: 14px;
+    animation: btnGlow 2.5s ease-in-out infinite;
+  }
+  @keyframes btnGlow {
+    0%,100% { box-shadow: 0 0 20px rgba(192,57,43,0.45); }
+    50%      { box-shadow: 0 0 50px rgba(192,57,43,0.9), 0 0 90px rgba(245,200,66,0.12); }
+  }
+  .popup-btn:hover { transform: translateY(-2px); }
+
+  .popup-skip {
+    display: inline-block; color: var(--muted); font-size: 12px;
+    cursor: pointer; background: none; border: none;
+    font-family: 'Rajdhani', sans-serif; letter-spacing: 1px;
+    text-decoration: underline; text-underline-offset: 3px;
+    transition: color 0.2s;
+  }
+  .popup-skip:hover { color: var(--text); }
+
+  /* ═══════════════ HERO ═══════════════ */
+  .hero {
+    min-height: 100vh; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 60px 20px 40px;
+    position: relative; overflow: hidden;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 40%, rgba(192,57,43,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 40% at 50% 100%, rgba(245,200,66,0.08) 0%, transparent 60%),
+      linear-gradient(180deg, #05070f 0%, #0c0718 50%, #05070f 100%);
+    z-index: 0;
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(rgba(245,200,66,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(245,200,66,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+    animation: gridDrift 20s linear infinite; z-index: 1;
+  }
+  @keyframes gridDrift { 0% { transform: translateY(0); } 100% { transform: translateY(60px); } }
+  .hero-orb {
+    position: absolute; width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(192,57,43,0.3) 0%, transparent 70%);
+    top: 50%; left: 50%; transform: translate(-50%,-60%);
+    animation: orbPulse 4s ease-in-out infinite; z-index: 1; filter: blur(30px);
+  }
+  @keyframes orbPulse {
+    0%,100% { transform: translate(-50%,-60%) scale(1); opacity: 0.7; }
+    50% { transform: translate(-50%,-60%) scale(1.15); opacity: 1; }
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 860px; }
+  .badge {
+    display: inline-block; background: rgba(192,57,43,0.2);
+    border: 1px solid rgba(192,57,43,0.5); color: #ff7060;
+    font-family: 'Orbitron', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 3px; text-transform: uppercase;
+    padding: 6px 18px; border-radius: 2px; margin-bottom: 28px;
+    animation: fadeDown 0.6s ease both;
+  }
+  .hero-eyebrow {
+    font-family: 'Orbitron', sans-serif; font-size: 13px;
+    letter-spacing: 5px; color: var(--gold); text-transform: uppercase;
+    margin-bottom: 16px; animation: fadeDown 0.7s 0.1s ease both;
+  }
+  h1 {
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(2.2rem, 6vw, 5rem); font-weight: 900; line-height: 1.08;
+    background: linear-gradient(135deg, #fff8e0 0%, var(--gold) 40%, #ff8c6b 80%, var(--dragon-red) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    margin-bottom: 24px; animation: fadeDown 0.7s 0.2s ease both;
+    filter: drop-shadow(0 0 40px rgba(245,200,66,0.3));
+  }
+  .hero-sub {
+    font-size: 1.2rem; color: var(--muted); max-width: 560px;
+    margin: 0 auto 40px; animation: fadeDown 0.7s 0.3s ease both; font-weight: 600;
+  }
+  .hero-sub span { color: var(--gold); }
+  .cta-row { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; animation: fadeDown 0.7s 0.4s ease both; }
+  .btn-primary {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--dragon-red) 0%, #8b0000 100%);
+    color: #fff; font-family: 'Orbitron', sans-serif; font-size: 14px;
+    font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    padding: 18px 40px; border-radius: 3px; text-decoration: none;
+    border: 1px solid rgba(255,80,60,0.4);
+    box-shadow: 0 0 30px rgba(192,57,43,0.5); transition: all 0.3s; cursor: pointer;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 0 50px rgba(192,57,43,0.8); }
+  .btn-secondary {
+    display: inline-block; background: transparent; color: var(--gold);
+    font-family: 'Orbitron', sans-serif; font-size: 13px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; padding: 17px 32px;
+    border-radius: 3px; text-decoration: none; border: 1px solid var(--border);
+    transition: all 0.3s; cursor: pointer;
+  }
+  .btn-secondary:hover { border-color: var(--gold); background: rgba(245,200,66,0.07); }
+  .scroll-hint {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    z-index: 2; display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: var(--muted); font-size: 11px; letter-spacing: 3px; text-transform: uppercase;
+    font-family: 'Orbitron', sans-serif; animation: fadeDown 1s 1s ease both;
+  }
+  .scroll-arrow {
+    width: 20px; height: 20px;
+    border-right: 2px solid var(--gold); border-bottom: 2px solid var(--gold);
+    transform: rotate(45deg); animation: bounce 1.5s ease-in-out infinite;
+  }
+  @keyframes bounce { 0%,100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(5px); } }
+
+  /* ═══════════════ STATS BAR ═══════════════ */
+  .stats-bar { background: rgba(245,200,66,0.05); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 24px 20px; }
+  .stats-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; }
+  .stat-item { text-align: center; }
+  .stat-num { font-family: 'Orbitron', sans-serif; font-size: 2rem; font-weight: 900; color: var(--gold); display: block; }
+  .stat-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+
+  /* ═══════════════ SECTIONS ═══════════════ */
+  section { padding: 90px 20px; max-width: 1000px; margin: 0 auto; }
+  .section-label { font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 4px; color: var(--dragon-red); text-transform: uppercase; margin-bottom: 12px; font-weight: 700; }
+  h2 { font-family: 'Cinzel Decorative', serif; font-size: clamp(1.6rem, 4vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.15; }
+  h2 .highlight { color: var(--gold); }
+  .lead { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin-bottom: 48px; font-weight: 600; }
+
+  /* ═══════════════ CARDS ═══════════════ */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 4px;
+    padding: 32px 28px; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,0,0,0.4); border-color: rgba(245,200,66,0.4); }
+  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); }
+  .card-icon { font-size: 2.4rem; margin-bottom: 18px; display: block; }
+  .card-title { font-family: 'Cinzel Decorative', serif; font-size: 1.1rem; color: #fff; margin-bottom: 10px; font-weight: 700; }
+  .card-body { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+  .card-body strong { color: var(--gold); }
+
+  /* ═══════════════ STEPS ═══════════════ */
+  .steps { display: flex; flex-direction: column; }
+  .step {
+    display: grid; grid-template-columns: 64px 1fr; gap: 24px;
+    padding: 32px 0; border-bottom: 1px solid rgba(245,200,66,0.08);
+    opacity: 0; transform: translateX(-20px); transition: opacity 0.5s, transform 0.5s;
+  }
+  .step.visible { opacity: 1; transform: none; }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    width: 64px; height: 64px; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(192,57,43,0.3), rgba(139,0,0,0.5));
+    border: 1px solid rgba(192,57,43,0.5);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Orbitron', sans-serif; font-size: 1.4rem; font-weight: 900; color: var(--gold); flex-shrink: 0;
+  }
+  .step-content h3 { font-family: 'Cinzel Decorative', serif; font-size: 1.05rem; color: #fff; margin-bottom: 8px; font-weight: 700; }
+  .step-content p { color: var(--muted); font-size: 0.95rem; line-height: 1.7; }
+  .step-content p strong { color: var(--text); }
+  .tag {
+    display: inline-block; background: rgba(192,57,43,0.15); border: 1px solid rgba(192,57,43,0.35);
+    color: #ff7060; font-size: 11px; letter-spacing: 2px; padding: 3px 10px;
+    border-radius: 2px; font-weight: 700; text-transform: uppercase; margin-top: 10px; font-family: 'Orbitron', sans-serif;
+  }
+  .tag.tip { background: rgba(245,200,66,0.1); border-color: rgba(245,200,66,0.3); color: var(--gold); }
+
+  /* ═══════════════ DROP TABLE ═══════════════ */
+  .drop-table { background: var(--panel); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; }
+  .drop-table table { width: 100%; border-collapse: collapse; }
+  .drop-table th { background: rgba(245,200,66,0.08); padding: 14px 20px; text-align: left; font-family: 'Orbitron', sans-serif; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--border); }
+  .drop-table td { padding: 14px 20px; border-bottom: 1px solid rgba(245,200,66,0.06); font-size: 0.95rem; }
+  .drop-table tr:last-child td { border-bottom: none; }
+  .drop-table tr:hover td { background: rgba(245,200,66,0.03); }
+  .rate-bar-wrap { display: flex; align-items: center; gap: 12px; }
+  .rate-bar { height: 6px; border-radius: 3px; background: linear-gradient(90deg, var(--dragon-red), var(--gold)); }
+  .rate-text { font-family: 'Orbitron', sans-serif; font-size: 12px; color: var(--gold); font-weight: 700; white-space: nowrap; }
+
+  /* ═══════════════ TIPS ═══════════════ */
+  .tips-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .tip-card { border: 1px solid var(--border); border-radius: 4px; padding: 22px 20px; background: rgba(10,14,30,0.5); transition: border-color 0.3s; }
+  .tip-card:hover { border-color: rgba(245,200,66,0.4); }
+  .tip-emoji { font-size: 1.8rem; margin-bottom: 12px; }
+  .tip-title { font-weight: 700; color: #fff; font-size: 1rem; margin-bottom: 6px; }
+  .tip-text { color: var(--muted); font-size: 0.88rem; line-height: 1.6; }
+
+  /* ═══════════════ FAQ ═══════════════ */
+  .faq { display: flex; flex-direction: column; }
+  .faq-item { border-bottom: 1px solid rgba(245,200,66,0.1); overflow: hidden; }
+  .faq-q { padding: 22px 0; font-weight: 700; font-size: 1.05rem; color: #fff; cursor: pointer; display: flex; justify-content: space-between; align-items: center; user-select: none; transition: color 0.2s; }
+  .faq-q:hover { color: var(--gold); }
+  .faq-arrow { font-size: 1.2rem; transition: transform 0.3s; color: var(--gold); flex-shrink: 0; margin-left: 16px; }
+  .faq-q.open .faq-arrow { transform: rotate(180deg); }
+  .faq-a { color: var(--muted); font-size: 0.95rem; line-height: 1.7; max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding-bottom 0.3s; }
+  .faq-a.open { max-height: 300px; padding-bottom: 22px; }
+  .faq-a strong { color: var(--gold); }
+
+  /* ═══════════════ CTA BANNER ═══════════════ */
+  .cta-banner {
+    background: linear-gradient(135deg, rgba(192,57,43,0.25) 0%, rgba(139,0,0,0.15) 50%, transparent 100%);
+    border: 1px solid rgba(192,57,43,0.3); border-radius: 6px;
+    padding: 60px 40px; text-align: center; position: relative; overflow: hidden;
+    max-width: 1000px; margin: 0 auto 90px;
+  }
+  .cta-banner::before {
+    content: ''; position: absolute; top: -2px; left: 10%; right: 10%; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--dragon-red), var(--gold), var(--dragon-red), transparent);
+  }
+  .cta-banner h2 { margin-bottom: 16px; }
+  .cta-banner p { color: var(--muted); font-size: 1.05rem; margin-bottom: 36px; max-width: 500px; margin-left: auto; margin-right: auto; }
+
+  footer { border-top: 1px solid var(--border); padding: 32px 20px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+  footer span { color: var(--gold); }
+  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
+
+  @keyframes fadeDown { from { opacity: 0; transform: translateY(-16px); } to { opacity: 1; transform: translateY(0); } }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--deep); }
+  ::-webkit-scrollbar-thumb { background: rgba(245,200,66,0.3); border-radius: 3px; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     POPUP — fires automatically when visitor lands
+     🔧 Replace YOUR_LOCKER_URL_HERE with your link
+════════════════════════════════════════════════════ -->
+<div class="popup-overlay" id="popupOverlay">
+  <div class="popup">
+    <div class="popup-top-bar"></div>
+    <button class="popup-close" onclick="closePopup()" aria-label="Close">✕</button>
+    <div class="popup-body">
+      <span class="popup-icon">🐉</span>
+      <p class="popup-eyebrow">🔥 Sea 2 — Exclusive Drop</p>
+      <h2>Get the Dragon Goddess Sword Guide</h2>
+      <p class="popup-desc">
+        Skip hours of grinding. Unlock the <strong>complete Dragon Goddess fast-farm guide</strong> — Sea Beast routes, best builds, Discord alert setup &amp; more. Free access below.
+      </p>
+      <div class="popup-perks">
+        <div class="popup-perk"><span class="perk-icon">⚔️</span> Fastest Sea Beast farming route in Sea 2</div>
+        <div class="popup-perk"><span class="perk-icon">📊</span> Stat builds to maximize drop luck</div>
+        <div class="popup-perk"><span class="perk-icon">🔔</span> Discord spawn alert setup guide</div>
+        <div class="popup-perk"><span class="perk-icon">🎁</span> All active codes for free Gems &amp; boosts</div>
+      </div>
+      <p class="popup-timer">⏳ Limited slots — <span id="countdown">04:59</span> remaining</p>
+      <!-- 🔧 REPLACE THE HREF BELOW WITH YOUR CONTENT LOCKER URL -->
+      <a class="popup-btn" href="https://tapunlock.co/cl/i/grjj3r" target="_blank" rel="noopener">
+        🔓 Unlock Free Access Now
+      </a>
+      <button class="popup-skip" onclick="closePopup()">No thanks, I'll grind for hours instead</button>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;max-width:none;">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-orb"></div>
+  <div class="hero-content">
+    <div class="badge">🔥 Sea 2 Update — April 2026</div>
+    <p class="hero-eyebrow">Sailor Piece Complete Guide</p>
+    <h1>Get Dragon Goddess<br>FAST in Sailor Piece</h1>
+    <p class="hero-sub">The <span>only guide</span> you need — drop rates, fastest farming methods, Sea 2 unlock steps, and pro tips from the community.</p>
+    <div class="cta-row">
+      <a href="#steps" class="btn-primary">⚔ Show Me How</a>
+      <a href="#drops" class="btn-secondary">Drop Rates →</a>
+    </div>
+  </div>
+  <div class="scroll-hint"><div class="scroll-arrow"></div>scroll</div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item"><span class="stat-num">2.08%</span><span class="stat-label">Sea Serpent Drop Rate</span></div>
+    <div class="stat-item"><span class="stat-num">MYTHIC</span><span class="stat-label">Rarity Tier</span></div>
+    <div class="stat-item"><span class="stat-num">+97.5%</span><span class="stat-label">Dragon Queen Dmg Bonus</span></div>
+    <div class="stat-item"><span class="stat-num">Lvl 12,500</span><span class="stat-label">Minimum Required</span></div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section>
+  <p class="section-label">Overview</p>
+  <h2>What is the <span class="highlight">Dragon Goddess</span> Sword?</h2>
+  <p class="lead">Introduced in the Sea 2 update (April 18, 2026), Dragon Goddess is one of the most powerful Mythical-rarity swords in Sailor Piece — scythe-like animations, devastating damage, and a synergy title that makes it unstoppable.</p>
+  <div class="card-grid">
+    <div class="card">
+      <span class="card-icon">🐉</span>
+      <div class="card-title">Mythical Rarity</div>
+      <div class="card-body">One of only two new swords in Sea 2. Drops exclusively from <strong>Sea Beasts</strong> — the Kraken and Sea Serpent.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">⚔️</span>
+      <div class="card-title">Top-Tier Damage</div>
+      <div class="card-body">Scythe-style animations with <strong>medium attack speed</strong> — balance damage-per-hit with combo potential for PvP and PvE.</div>
+    </div>
+    <div class="card">
+      <span class="card-icon">👑</span>
+      <div class="card-title">Dragon Queen Synergy</div>
+      <div class="card-body">Pair with the Dragon Queen title for <strong>+97.5% damage</strong> — the highest damage title in the game right now.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- STEPS -->
+<section id="steps">
+  <p class="section-label">Step-by-Step</p>
+  <h2>How to Get <span class="highlight">Dragon Goddess</span> Fast</h2>
+  <p class="lead">Follow these steps in order. Skipping any will waste your time — especially the Sea 2 unlock.</p>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-content">
+        <h3>Hit Level 12,500 + Ascension 5</h3>
+        <p>You cannot start the Sea 2 unlock without reaching <strong>Level 12,500</strong> and <strong>Ascension Level 5</strong>. Use AoE fruits (Quake, Flame, Ice), follow quest NPC chains, and redeem 2x EXP boost codes.</p>
+        <span class="tag">Required Gate</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-content">
+        <h3>Unlock Sea 2 via Ancient Fragments</h3>
+        <p>Head to <strong>World Island in Sea 1</strong> and speak to the Cartographer NPC. Collect <strong>2 Ancient Fragments</strong> from 20 locations across 12 Sea 1 islands. Fragments spawn every 1m 30s and despawn after 5 min.</p>
+        <span class="tag tip">Pro Tip: Use Private Server</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-content">
+        <h3>Max Out Your Stats Before Farming</h3>
+        <p>Sea Beasts have <strong>~1.25 trillion HP</strong>. Equip the best titles, races, and clan bonuses. Bless and Enchant everything. Keep your bounty high — <strong>higher bounty = faster Sea Beast spawns</strong>.</p>
+        <span class="tag tip">Critical for Speed</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">04</div>
+      <div class="step-content">
+        <h3>Sail to Open Sea & Hunt Sea Beasts</h3>
+        <p>Sea Beasts don't spawn on land. <strong>Sail into the Open Sea of Sea 2</strong>. Spawns are global and random — join Discord alert channels so your squad gets notified the moment one appears.</p>
+        <span class="tag">Target: Kraken & Sea Serpent</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">05</div>
+      <div class="step-content">
+        <h3>Defeat & Loot — Repeat Until Drop</h3>
+        <p>Each kill guarantees a <strong>Bloodline Stone + Clan Reroll</strong>. The <strong>Sea Serpent drops at 2.08%</strong> vs Kraken's 0.96%. The April 19 hotfix buffed the rate — now is the best time to farm.</p>
+        <span class="tag tip">Best Source: Sea Serpent</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">06</div>
+      <div class="step-content">
+        <h3>(Optional) Buy It Directly with Robux</h3>
+        <p>Skip the grind entirely from the in-game shop: <strong>Dragon Goddess standalone — 1,499 Robux</strong>. Full bundle (The World, Cosmic Being, Great Mage + Dragon Goddess) for 4,299 Robux.</p>
+        <span class="tag">Shop Option</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- DROP RATES -->
+<section id="drops">
+  <p class="section-label">Data</p>
+  <h2>Dragon Goddess <span class="highlight">Drop Rates</span></h2>
+  <p class="lead">Updated after the April 19, 2026 hotfix that buffed the Dragon Goddess drop rate from Sea Beasts.</p>
+  <div class="drop-table">
+    <table>
+      <thead><tr><th>Source</th><th>Location</th><th>Drop Rate</th><th>Visual</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>🐍 Sea Serpent</td><td>Open Sea, Sea 2</td><td>2.08%</td>
+          <td><div class="rate-bar-wrap"><div class="rate-bar" style="width:100px;"></div><span class="rate-text">BEST</span></div></td>
+        </tr>
+        <tr>
+          <td>🦑 Kraken</td><td>Open Sea, Sea 2</td><td>0.96%</td>
+          <td><div class="rate-bar-wrap"><div class="rate-bar" style="width:46px;"></div><span class="rate-text">RARE</span></div></td>
+        </tr>
+        <tr>
+          <td>🏪 In-Game Shop</td><td>Shop Tab</td><td>100% (1,499 Robux)</td>
+          <td><div class="rate-bar-wrap"><div class="rate-bar" style="width:140px;background:linear-gradient(90deg,#2ecc71,#27ae60);"></div><span class="rate-text" style="color:#2ecc71;">GUARANTEED</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PRO TIPS -->
+<section>
+  <p class="section-label">Community Tips</p>
+  <h2>Speed Up Your <span class="highlight">Farm</span></h2>
+  <p class="lead">Tips from the Sailor Piece community that cut grind time significantly.</p>
+  <div class="tips-grid">
+    <div class="tip-card"><div class="tip-emoji">📡</div><div class="tip-title">Join Discord Alerts</div><div class="tip-text">Sea Beast spawns are global and random. Discord servers post real-time alerts — arrive early to maximize your hits.</div></div>
+    <div class="tip-card"><div class="tip-emoji">🔒</div><div class="tip-title">Use Private Servers</div><div class="tip-text">Farm Ancient Fragments for Sea 2 unlock much faster and coordinate Sea Beast raids without interruption.</div></div>
+    <div class="tip-card"><div class="tip-emoji">🏆</div><div class="tip-title">Stack Luck Passives</div><div class="tip-text">Equip the best Luck-boosting races, clans, and spec passives. Every edge matters at sub-3% drop rates.</div></div>
+    <div class="tip-card"><div class="tip-emoji">⚡</div><div class="tip-title">Target Sea Serpent</div><div class="tip-text">At 2.08% vs Kraken's 0.96%, the Sea Serpent is over twice as efficient. Always prioritize it.</div></div>
+    <div class="tip-card"><div class="tip-emoji">👥</div><div class="tip-title">Raid in Groups</div><div class="tip-text">With 1.25 trillion HP, Sea Beasts are slow solo. 4–6 player raids dramatically cut kill time.</div></div>
+    <div class="tip-card"><div class="tip-emoji">🗡️</div><div class="tip-title">Keep Bounty High</div><div class="tip-text">Bounty directly affects Sea Beast spawn rate. Don't trade it away during active farming sessions.</div></div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- FAQ -->
+<section>
+  <p class="section-label">FAQ</p>
+  <h2>Frequently Asked <span class="highlight">Questions</span></h2>
+  <p class="lead">Quick answers to the most common Dragon Goddess questions.</p>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Do Sea Beasts spawn on a timer? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">No. Spawns are completely random and global — no fixed timer. Join a Discord with spawn notifications and AFK sail in open sea while you wait.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Can I farm Dragon Goddess in Sea 1? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">No. The Kraken and Sea Serpent only appear in <strong>Sea 2</strong>. Complete the Ancient Fragment questline from the Cartographer NPC on World Island first (requires Lvl 12,500 + Ascension 5).</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What does the Dragon Queen title do? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">It provides <strong>+97.5% damage</strong> — the highest damage title in the game. It drops from the same Sea Beasts, so you can farm both simultaneously for the ultimate endgame loadout.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Is buying Dragon Goddess with Robux worth it? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">At 1,499 Robux standalone it guarantees the sword instantly. The 4,299 Robux bundle adds The World, Cosmic Being, and Great Mage — better value if you want multiple Sea 2 items.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What else drops from Sea Beasts? <span class="faq-arrow">▾</span></div>
+      <div class="faq-a">Every kill guarantees a <strong>Bloodline Stone</strong> and <strong>Clan Reroll</strong>. Chance drops include the <strong>Blossom Outfit</strong>, <strong>Kraken Armor</strong>, and Dragon Goddess. The Dragon Queen title also drops here.</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner" style="padding-left:20px;padding-right:20px;">
+  <p class="section-label">Ready?</p>
+  <h2>Start Your <span class="highlight">Dragon Goddess</span> Grind</h2>
+  <p>You now have everything you need. Unlock Sea 2, join a Discord, stack your stats, and start hunting. The grind is real — but the sword is worth it.</p>
+  <div class="cta-row">
+    <a href="#steps" class="btn-primary">⚔ Back to Steps</a>
+    <a href="#drops" class="btn-secondary">Check Drop Rates</a>
+  </div>
+</div>
+
+<footer>
+  <p>Dragon Goddess guide for <span>Sailor Piece</span> — Sea 2 Update (April 2026). Not affiliated with Roblox or the Sailor Piece developers.</p>
+</footer>
+
+<script>
+  // ═══ POPUP ═══════════════════════════════════════════
+  const overlay = document.getElementById('popupOverlay');
+
+  // Fire popup 1.5s after page loads
+  window.addEventListener('load', () => setTimeout(() => overlay.classList.add('active'), 1500));
+
+  function closePopup() {
+    overlay.classList.remove('active');
+    clearInterval(timerInterval);
+  }
+
+  // Close on backdrop click
+  overlay.addEventListener('click', e => { if (e.target === overlay) closePopup(); });
+
+  // Countdown: 5 minutes
+  let secs = 299;
+  const cdEl = document.getElementById('countdown');
+  const timerInterval = setInterval(() => {
+    if (secs <= 0) { clearInterval(timerInterval); cdEl.textContent = '00:00'; return; }
+    secs--;
+    cdEl.textContent = String(Math.floor(secs/60)).padStart(2,'0') + ':' + String(secs%60).padStart(2,'0');
+  }, 1000);
+
+  // ═══ FAQ ═════════════════════════════════════════════
+  function toggleFaq(el) {
+    const ans = el.nextElementSibling;
+    const open = ans.classList.contains('open');
+    document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+    document.querySelectorAll('.faq-q.open').forEach(q => q.classList.remove('open'));
+    if (!open) { ans.classList.add('open'); el.classList.add('open'); }
+  }
+
+  // ═══ SCROLL REVEAL ═══════════════════════════════════
+  const steps = document.querySelectorAll('.step');
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), 100); });
+  }, { threshold: 0.15 });
+  steps.forEach((s, i) => { s.style.transitionDelay = `${i * 0.08}s`; obs.observe(s); });
+</script>
+</body>
+</html>
